@@ -22,7 +22,7 @@ var fetchProfileAndWriteToFile = function (readFilePath, writeFilePath) {
       return gitHubProfile.getGitHubProfileAsync(firstLine);
     })
     .then((profile) => { // write json response to write path
-      writeFile(writeFilePath, JSON.stringify(profile));
+      return writeFile(writeFilePath, JSON.stringify(profile));
     });
   // .catch((err) => { //catch errors
   //   console.error(err);
